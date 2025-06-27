@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
   $result = mysqli_query($link, $sql);
 
-  if (mysqli_num_rows($result) == 1) {
+  if (mysqli_num_rows($result) != 0) {
     setcookie("User", mysqli_fetch_row($result)[0], time()+7200);
     header('Location: profile.php');
   } else {
